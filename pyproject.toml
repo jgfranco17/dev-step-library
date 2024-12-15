@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dev-step-library"
+version = "0.0.1"
+description = "Reusable test step library for developer tooling"
+authors = ["Chino Franco <chino.franco@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-can = "^4.5.0"
+behave = "^1.2.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+coverage = "^7.6.8"
+black = "^24.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
