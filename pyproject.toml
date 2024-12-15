@@ -4,7 +4,9 @@ version = "0.0.1"
 description = "Reusable test step library for developer tooling"
 authors = ["Chino Franco <chino.franco@gmail.com>"]
 readme = "README.md"
-package-mode = false
+packages = [
+    { include = "dev_step_library" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
