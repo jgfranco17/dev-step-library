@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from behave import given, then, when
+from behave import given
 
 from tests.shared.stubs import TestContext
 

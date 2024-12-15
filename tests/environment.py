@@ -1,7 +1,6 @@
 import logging
 import os
 import shutil
-from pathlib import Path
 
 from behave.model import Scenario
 

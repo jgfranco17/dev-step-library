@@ -4,14 +4,19 @@ _default:
 
 # Execute installation
 setup:
-	@echo "Setting up project."
+	@echo "Setting up project..."
 	poetry install
 	poetry shell
 	@echo "Project setup complete!"
 
+# Run linters
 lint:
     poetry run black .
+    poetry run flake8 .
+    poetry run isort .
+    echo "Project workspace linted!"
 
+# Run feature tests
 test:
     poetry run behave tests/
 
@@ -31,4 +36,4 @@ clean:
 	-@rm -rf .tox/
 	-@rm -rf docs/_build
 	-@rm -rf .venv
-	@echo "Cleaned out unused files and directories!"
+	@echo "Cleaned out unused files and directories."
