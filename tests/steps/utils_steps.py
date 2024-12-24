@@ -1,11 +1,12 @@
 from pathlib import Path
 
-from behave import given
+from behave import given, when
 
 from tests.shared.stubs import TestContext
 
 
-@given('I create a temporary file "{filepath}"')
+@given('I create a temporary file "{filepath:S}"')
+@when('I create a temporary file "{filepath:S}"')
 def step_given_named_temp_file(context: TestContext, filepath: str):
     """Creates a named temporary file in the specified directory."""
     temp_file = Path(filepath).expanduser().resolve()

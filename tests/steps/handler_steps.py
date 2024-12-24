@@ -5,8 +5,8 @@ from behave import given, then, when
 from tests.shared.stubs import TestContext
 
 
-@given("I try: '{step}'")
-@when("I try: '{step}'")
+@given("I try: {step}")
+@when("I try: {step}")
 def step_try_step(context: TestContext, step: str):
     """Executes a step safely and captures any Exception raised."""
     try:

@@ -13,10 +13,16 @@ logger = logging.getLogger(__name__)
 def before_all(context: TestContext):
     """Initialize shared context data."""
     environment.before_all(context)
+
+
+def before_scenario(context: TestContext, scenario: Scenario):
+    """Initialize shared context data."""
+    environment.before_all(context)
     context.last_exception = None
     context.last_traceback = ""
     context.files_created = []
     context.dirs_created = []
+    logger.debug(f"Starting scenario: {scenario.name}")
 
 
 def after_scenario(context: TestContext, scenario: Scenario):
@@ -30,3 +36,4 @@ def after_scenario(context: TestContext, scenario: Scenario):
         + f"{len(context.dirs_created)} directories."
     )
     context.last_exception = None
+    logger.debug(f"Scenario '{scenario.name}' ran in {scenario.duration:.2f}s")

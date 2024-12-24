@@ -4,13 +4,13 @@ Feature: Validate Directory Steps
     So that I can validate directory operations safely.
 
     Scenario: Check current directory exists
-        Given directory "./" exists
+        Given the directory "./" exists
         Then no error is raised
 
     Scenario: Check parent directory exists
-        Given directory "../" exists
+        Given the directory "../" exists
         Then no error is raised
 
     Scenario: Check home directory exists
-        Given directory "~" exists
+        Given the directory "~" exists
         Then no error is raised
