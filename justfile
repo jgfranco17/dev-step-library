@@ -17,8 +17,8 @@ lint:
     echo "Project workspace linted!"
 
 # Run feature tests
-test:
-    poetry run behave tests/
+behave *ARGS:
+    poetry run behave tests/ {{ ARGS}}
 
 # Clean unused files
 clean:

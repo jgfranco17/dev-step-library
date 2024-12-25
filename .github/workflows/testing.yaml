@@ -31,14 +31,20 @@ jobs:
 
       - name: Validate test steps
         run: |
-          poetry run behave tests/ > behaviors.txt
+          poetry run behave tests/ --junit > behaviors.txt
 
       - name: Create GHA job summary
-        if: always()
+        if: success() || failure()
         run: |
           TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
-          echo "# FizzBuzz API Testing Report [${TIMESTAMP}"] >> $GITHUB_STEP_SUMMARY
+          echo "# Dev Step Library - Testing Report [${TIMESTAMP}"] >> $GITHUB_STEP_SUMMARY
           echo "## Behave report" >> $GITHUB_STEP_SUMMARY
-          echo '```shell' >> $GITHUB_STEP_SUMMARY
+          echo '```console' >> $GITHUB_STEP_SUMMARY
           cat behaviors.txt >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload JUnit reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: behave-junit-reports
+          path: reports/
