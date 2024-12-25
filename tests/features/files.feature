@@ -12,4 +12,4 @@ Feature: Validate File Steps
 
     Scenario: Error raised if file does not exist
         When I try: Given the file "non-existent-file.json" exists
-        Then an error is raised
+        Then the error message contains: Path 'non-existent-file.json' does not exist

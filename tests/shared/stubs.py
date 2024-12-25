@@ -8,6 +8,5 @@ class TestContext(Context):
     """File context interface for development and testing."""
 
     last_exception: Union[Exception, None]
-    last_traceback: Union[str, None]
     files_created: List[Path]
     dirs_created: List[Path]
