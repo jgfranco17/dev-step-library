@@ -1,4 +1,7 @@
 Feature: Validate File Steps
+    As a software developer
+    I want to have a set of steps to validate files
+    So that I can safely handle files during tests
 
     Scenario: Check temp file exists
         Given I create a temporary file "./temp.txt"

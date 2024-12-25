@@ -1,7 +1,7 @@
 Feature: Validate Directory Steps
-    As a developer
-    I want to create and manipulate temporary directories during tests
-    So that I can validate directory operations safely.
+    As a software developer
+    I want to have a set of steps to validate directories
+    So that I can safely handle directories during tests
 
     Scenario: Check current directory exists
         Given the directory "./" exists
